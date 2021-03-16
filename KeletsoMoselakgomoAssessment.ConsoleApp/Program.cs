@@ -17,7 +17,7 @@ namespace KeletsoMoselakgomoAssessment.ConsoleApp
                 Directory.CreateDirectory(folderName);
             }
 
-            string path = "BDG_Input.txt";
+            string path = "../../../App_data/BDG_Input.txt";
             var jsonString = convertCsvFileToJsonObject(path);
             Console.WriteLine(jsonString);
             createJsonFile(jsonString);
@@ -26,7 +26,7 @@ namespace KeletsoMoselakgomoAssessment.ConsoleApp
         static string convertCsvFileToJsonObject(string path)
         {
             var csv = new List<string[]>();
-            string headers = "Id|Name|Surname|Email|Gender|Salary";
+            string headers = "Id|Name|Surname|Email|Gender|IpAddress";
 
             List<string> ltLines = File.ReadAllLines(path).ToList();
             ltLines.Insert(0,headers);

@@ -13,6 +13,6 @@ namespace KeletsoMoselakgomoAssessment.WebApp.Models
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
-        public string Salary { get; set; }
+        public string IpAddress { get; set; }
     }
 }
