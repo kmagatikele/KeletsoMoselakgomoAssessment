@@ -27,9 +27,14 @@ namespace KeletsoMoselakgomoAssessment.WebApp.Controllers
         {
             string path = @"C:\Temp\BDG_Output.json";
             var employees = new List<Employee>();
-            using (StreamReader sr = new StreamReader(path))
+
+            if(System.IO.File.Exists(path))
             {
-                employees = JsonConvert.DeserializeObject<List<Employee>>(sr.ReadToEnd());
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    var text = sr.ReadToEnd();
+                    employees = JsonConvert.DeserializeObject<List<Employee>>(text);
+                }
             }
 
             return employees;
